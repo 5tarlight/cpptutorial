@@ -13,13 +13,20 @@ private:
 
 public:
   MyString();
+  explicit MyString(const char *pszParam);
   MyString(MyString &rhs);
+  MyString(MyString &&rhs) noexcept ;
   ~MyString();
 
   MyString& operator=(const MyString &rhs);
+  MyString operator+(const MyString &rhs);
+  MyString& operator+=(const MyString &rhs);
+  explicit operator char*() { return m_pszData; }
 
   int setString(const char* pszParam);
   const char* getString() const;
+  int getLength() const;
+  int append(const char* pszParam);
   void release();
 };
 

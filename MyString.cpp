@@ -2,9 +2,6 @@
 // Created by devel on 2021-01-29.
 //
 
-#define __STDC_WANT_LIB_EXT1__ 1
-
-#include "stdafx.h"
 #include "MyString.h"
 #include <cstring>
 
@@ -54,6 +51,30 @@ MyString &MyString::operator+=(const MyString &rhs) {
   return *this;
 }
 
+char &MyString::operator[](int nIndex) {
+  return m_pszData[nIndex];
+}
+
+char MyString::operator[](int nIndex) const {
+  return m_pszData[nIndex];
+}
+
+int MyString::operator==(const MyString &rhs) {
+  if (m_pszData != nullptr && rhs.m_pszData!= nullptr) {
+    return strcmp(m_pszData, rhs.m_pszData) == 0;
+  }
+
+  return 0;
+}
+
+int MyString::operator!=(const MyString &rhs) {
+  if (m_pszData != nullptr && rhs.m_pszData!= nullptr) {
+    return strcmp(m_pszData, rhs.m_pszData) != 0;
+  }
+
+  return 1;
+}
+
 int MyString::setString(const char *pszParam) {
   release();
 
@@ -75,8 +96,7 @@ const char *MyString::getString() const {
 }
 
 void MyString::release() {
-  if (m_pszData != nullptr)
-    delete[] m_pszData;
+  delete[] m_pszData;
 
   m_pszData = nullptr;
   m_nLength = 0;

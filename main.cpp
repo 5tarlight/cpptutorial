@@ -2,9 +2,20 @@
 #include "MyString.h"
 
 int main() {
-  MyString hello("Hello"), world(" World");
+  MyString strLeft("Test"), strRight("String");
 
-  cout << (hello + world).getString() << endl;
+  if (strLeft == strRight) {
+    cout << "Same" << endl;
+  } else {
+    cout << "Different" << endl;
+  }
+
+  strLeft = MyString("String");
+
+  if (strLeft != strRight)
+    cout << "Different" << endl;
+  else
+    cout << "Same" << endl;
 
   return 0;
 }

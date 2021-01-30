@@ -33,6 +33,8 @@ MyString::~MyString() {
 }
 
 MyString &MyString::operator=(const MyString &rhs) {
+  if (this == &rhs) return *this;
+
   strcpy(m_pszData, rhs.m_pszData);
   m_nLength = rhs.m_nLength;
 

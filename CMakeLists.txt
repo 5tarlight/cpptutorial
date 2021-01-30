@@ -3,4 +3,4 @@ project(cpptutorial)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(cpptutorial main.cpp func/FuncTemplate.h)
+add_executable(cpptutorial main.cpp func/FuncTemplate.h MyString.cpp MyString.h stdafx.h)

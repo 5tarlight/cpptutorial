@@ -1,21 +1,9 @@
 #include "stdafx.h"
-#include "MyString.h"
+#include "mystring/MyStringEx.h"
 
 int main() {
-  MyString strLeft("Test"), strRight("String");
+  MyStringEx strTest;
+  strTest.setString("개새끼");
 
-  if (strLeft == strRight) {
-    cout << "Same" << endl;
-  } else {
-    cout << "Different" << endl;
-  }
-
-  strLeft = MyString("String");
-
-  if (strLeft != strRight)
-    cout << "Different" << endl;
-  else
-    cout << "Same" << endl;
-
-  return 0;
+  cout << (char*)strTest << endl;
 }

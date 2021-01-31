@@ -5,6 +5,7 @@
 #ifndef CPPTUTORIAL_MYSTRING_H
 #define CPPTUTORIAL_MYSTRING_H
 
+#pragma once
 
 class MyString {
 private:
@@ -34,6 +35,7 @@ public:
   const char* getString() const;
   int getLength() const;
   int append(const char* pszParam);
+  virtual void onSetString(char *pszData, int nLength);
   void release();
 };
 

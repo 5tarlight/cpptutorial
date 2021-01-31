@@ -88,6 +88,8 @@ int MyString::setString(const char *pszParam) {
   strcpy(m_pszData, pszParam);
   m_nLength = length;
 
+  onSetString(m_pszData, m_nLength);
+
   return m_nLength;
 }
 
@@ -131,3 +133,5 @@ int MyString::append(const char *pszParam) {
 
   return m_nLength;
 }
+
+void MyString::onSetString(char *pszData, int nLength) {}
